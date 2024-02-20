@@ -50,7 +50,6 @@ st.info(
 )
 st.success(
     """
-    to understand our broader vision.
     """,
     icon="🗺",
 )
