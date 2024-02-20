@@ -17,50 +17,8 @@ def img_to_html(img_path, max_width='100%'):
 st.markdown(img_to_html('image/12.png', max_width='100%'),unsafe_allow_html=True)
 st.markdown('''
             <div>
-            <img id='char0' src=''data:image/png;base64,{}' class='img-fluid' style='max-width:100%'.format(img_to_bytes(img_path))
+            <img id='char0' src=''data:image/png;base64,{}' class='img-fluid' style='max-width:100%'.format(img_to_bytes('image/12.png'))
             ''', unsafe_allow_html=True)
-# JavaScript 코드 생성
-javascript_code = """
-<script>
-    var modal = document.getElementById('myModal');
-    var img = document.getElementsByClassName('img-clickable')[0];
-    var modalImg = document.getElementById("img01");
-
-    img.onclick = function(){
-        modal.style.display = "block";
-        modalImg.src = this.src;
-    }
-
-    var span = document.getElementsByClassName("close")[0];
-
-    span.onclick = function() { 
-        modal.style.display = "none";
-    }
-</script>
-"""
-
-# JavaScript 코드 표시
-st.markdown(javascript_code, unsafe_allow_html=True)
-
-# 모달 창 HTML 코드 생성
-modal_html = """
-<div id="myModal" class="modal" style="display:none;">
-  <span class="close">&times;</span>
-  <img class="modal-content" id="img01" style="max-width:100%;">
-</div>
-"""
-
-# 모달 창 HTML 코드 표시
-st.markdown(modal_html, unsafe_allow_html=True)
-
-
-
-
-
-
-
-
-
 
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
