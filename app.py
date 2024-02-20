@@ -17,7 +17,8 @@ def img_to_html(img_path, max_width='100%'):
 st.markdown(img_to_html('image/12.png', max_width='100%'),unsafe_allow_html=True)
 st.markdown('''
             <div>
-            <img id='char0' src=''data:image/png;base64,{}' class='img-fluid' style='max-width:100%'.format(img_to_bytes('image/12.png'))
+            <img id='char0' src='data:image/png;base64,{}' class='img-fluid' style='max-width:100%'.format(img_to_bytes('image/12.png'))
+            </div>
             ''', unsafe_allow_html=True)
 
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
