@@ -129,13 +129,7 @@ st.success(
 )
 
 
-image_path = img_to_html('image/12.png','chaar')
 
-# Define the HTML hyperlink with the image
-html_string = f'<a href="{image_path}" target="_blank"><img src="{image_path}" width="200" caption="legend"></a>'
-
-# # Display the image using `st.markdown`
-st.markdown(html_string, unsafe_allow_html=True)
 
 with st.sidebar:
     st.markdown('''<div style="font-weight:bold;">Brand Cookbook</div>''', unsafe_allow_html=True)
