@@ -128,8 +128,26 @@ image_path = 'image/12.png'
 # st.markdown(html_string, unsafe_allow_html=True)
 
 
-# HTML 및 JavaScript 코드
-html_code = """
+import streamlit as st
+from pathlib import Path
+import base64
+
+# 이미지를 바이트로 변환하는 함수
+def img_to_bytes(img_path):
+    img_bytes = Path(img_path).read_bytes()
+    encoded = base64.b64encode(img_bytes).decode()
+    return encoded
+
+# 이미지를 HTML 태그로 변환하는 함수
+def img_to_html(img_path, max_width='100%'):
+    img_html = "<img src='data:image/png;base64,{}' class='popup-trigger' alt='Image' style='max-width:{};' width='200' height='200'>".format(
+        img_to_bytes(img_path),
+        max_width
+    )
+    return img_html
+
+# 이미지를 클릭했을 때 팝업으로 열리도록 하는 HTML 및 JavaScript 코드
+popup_code = """
 <!DOCTYPE html>
 <html>
 <head>
@@ -159,8 +177,6 @@ html_code = """
     </style>
 </head>
 <body>
-    <img src=img_to_html('image/12.png', max_width='100%') class="popup-trigger" alt="Image" width="200" height="200">
-
     <div id="popup" class="popup-img">
         <span class="close-btn" onclick="closePopup()">&times;</span>
         <img id="popup-img" src="" alt="Popup Image">
@@ -190,6 +206,8 @@ html_code = """
 </html>
 """
 
-# Streamlit에서 HTML 코드 표시
-st.markdown(html_code, unsafe_allow_html=True)
+# Streamlit에서 이미지를 표시하고 HTML 코드를 표시
+st.markdown(img_to_html('image/12.png', max_width='100%'), unsafe_allow_html=True)
+st.markdown(popup_code, unsafe_allow_html=True)
+
 
