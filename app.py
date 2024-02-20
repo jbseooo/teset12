@@ -8,7 +8,7 @@ def img_to_bytes(img_path):
     return encoded
 
 def img_to_html(img_path,img_id):
-    img_html = "<img src='data:image/png;base64,{}' img_id='{}'>".format(
+    img_html = "<img src='data:image/png;base64,{}' img id='{}'>".format(
         img_to_bytes(img_path),img_id,
     )
     return img_html
