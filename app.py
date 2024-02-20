@@ -28,9 +28,14 @@ def img_to_html(img_path, max_width='100%'):
     )
     return img_html
 
+
+with open('./styles/0_style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
+
+
 st.markdown('''
-    <div>
-        {}
+    <div class='image_container'>
+        <img id='char0' src={}>
     </div>
 '''.format(img_to_html('image/12.png')), unsafe_allow_html=True)
 
