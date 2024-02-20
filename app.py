@@ -69,7 +69,7 @@ st.markdown(html_code.format(img_to_html('image/12.png', 'char0')), unsafe_allow
 st.markdown(javascript_code, unsafe_allow_html=True)
 
 
-st.mardown("""
+st.markdown("""
 <div>
 <span class="highlight">희망적인 메시지</span>
 </div>
