@@ -121,10 +121,75 @@ st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
 image_path = 'image/12.png'
 
-
-st.image(image_path)
 # Define the HTML hyperlink with the image
 # html_string = f'<a href="{image_path}" target="_blank"><img src="{image_path}" width="200" caption="legend"></a>'
 
 # # Display the image using `st.markdown`
 # st.markdown(html_string, unsafe_allow_html=True)
+
+
+# HTML 및 JavaScript 코드
+html_code = """
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Popup</title>
+    <style>
+        /* Optional: Style for the popup image */
+        .popup-img {
+            max-width: 90%;
+            max-height: 90%;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 9999;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+            border-radius: 5px;
+            background-color: white;
+            display: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <img src=img_to_html('image/12.png', max_width='100%') class="popup-trigger" alt="Image" width="200" height="200">
+
+    <div id="popup" class="popup-img">
+        <span class="close-btn" onclick="closePopup()">&times;</span>
+        <img id="popup-img" src="" alt="Popup Image">
+    </div>
+
+    <script>
+        // Function to open the popup and display the clicked image
+        function openPopup(imgSrc) {
+            document.getElementById('popup-img').src = imgSrc;
+            document.getElementById('popup').style.display = 'block';
+        }
+
+        // Function to close the popup
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+
+        // Attach click event listener to all images with class 'popup-trigger'
+        var popupTriggers = document.querySelectorAll('.popup-trigger');
+        popupTriggers.forEach(function (trigger) {
+            trigger.addEventListener('click', function () {
+                openPopup(this.src);
+            });
+        });
+    </script>
+</body>
+</html>
+"""
+
+# Streamlit에서 HTML 코드 표시
+st.markdown(html_code, unsafe_allow_html=True)
+
