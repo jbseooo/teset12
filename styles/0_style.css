@@ -24,3 +24,10 @@
     margin: 30px auto 10px auto;
     max-width: 80%;
 }
+.highlight:after{
+  content:"";
+  width: 0;
+  height: 10px;
+  display: inline-block;
+  background: #D9FCDB;
+}
