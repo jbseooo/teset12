@@ -16,10 +16,6 @@ def img_to_html(img_path, max_width='100%'):
 
 st.markdown(img_to_html('image/12.png', max_width='100%'), unsafe_allow_html=True)
 
-
-st.markdown(img_to_html('image/12.png'), unsafe_allow_html=True)
-
-
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
