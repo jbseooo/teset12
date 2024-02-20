@@ -50,7 +50,6 @@ st.info(
 )
 st.success(
     """
-    Read [the blog post on Streamlit's 2023 roadmap](https://blog.streamlit.io/the-next-frontier-for-streamlit/)
     to understand our broader vision.
     """,
     icon="🗺",
@@ -63,9 +62,6 @@ st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
 hide_streamlit_footer = """<style>#MainMenu {visibility: hidden;}
                         footer {visibility: hidden;}</style>"""
 st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
-
-
-import streamlit as st
 
 image_path = 'image/12.png'
 
