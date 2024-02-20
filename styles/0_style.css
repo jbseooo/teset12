@@ -24,8 +24,24 @@
     margin: 30px auto 10px auto;
     max-width: 80%;
 }
+
+div{cursor: pointer;}
+div:hover .highlight:after{
+  width:100%;
+}
 .highlight{
-  display: inline;
-  box-shadow: inset 0 -10px 0 #D9FCDB; 
-  /*-10px은 highlight의 두께*/
+  display: inline-block; 
+  position: relative;
+}
+.highlight:after{
+  content:"";
+  width: 0;
+  height: 10px;
+  display: inline-block;
+  background: #D9FCDB;
+  position: absolute;
+  bottom:0;
+  left:0;
+  z-index:-1;
+  transition: 0.2s all;
 }
