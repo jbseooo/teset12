@@ -13,9 +13,6 @@ def img_to_html(img_path,img_id):
     )
     return img_html
 
-st.markdown(img_to_html('image/12.png','chaar',),unsafe_allow_html=True)
-
-
 
 
 with open('./styles/0_style.css') as f:
