@@ -7,14 +7,13 @@ def img_to_bytes(img_path):
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
 
-def img_to_html(img_path,img_id ,max_width='100%'):
-    img_html = "<img src='data:image/png;base64,{}' img_id='{}' style='max-width:{};'>".format(
+def img_to_html(img_path,img_id):
+    img_html = "<img src='data:image/png;base64,{}' img_id='{}'>".format(
         img_to_bytes(img_path),img_id,
-        max_width
     )
     return img_html
 
-st.markdown(img_to_html('image/12.png','chaar',max_width='100%'),unsafe_allow_html=True)
+st.markdown(img_to_html('image/12.png','chaar',),unsafe_allow_html=True)
 
 
 
