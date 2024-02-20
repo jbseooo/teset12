@@ -7,26 +7,16 @@ def img_to_bytes(img_path):
     encoded = base64.b64encode(img_bytes).decode()
     return encoded
 
-def img_to_html(img_path, max_width='100%'):
-    img_html = "<img src='data:image/png;base64,{}' class='img-fluid' style='max-width:{};'>".format(
-        img_to_bytes(img_path),
+def img_to_html(img_path,img_id ,max_width='100%'):
+    img_html = "<img src='data:image/png;base64,{}' img_id='{}' style='max-width:{};'>".format(
+        img_to_bytes(img_path),img_id,
         max_width
     )
     return img_html
 
-st.markdown(img_to_html('image/12.png', max_width='100%'),unsafe_allow_html=True)
+st.markdown(img_to_html('image/12.png','chaar',max_width='100%'),unsafe_allow_html=True)
 
-def img_to_bytes(img_path):
-    img_bytes = Path(img_path).read_bytes()
-    encoded = base64.b64encode(img_bytes).decode()
-    return encoded
 
-def img_to_html(img_path, max_width='100%'):
-    img_html = "<img src='data:image/png;base64,{}' class='img-fluid' style='max-width:{};'>".format(
-        img_to_bytes(img_path),
-        max_width
-    )
-    return img_html
 
 
 with open('./styles/0_style.css') as f:
@@ -35,9 +25,9 @@ with open('./styles/0_style.css') as f:
 
 st.markdown('''
     <div class='image_container'>
-        <img id='char0'> {}
+        {}
     </div>
-'''.format(img_to_html('image/12.png')), unsafe_allow_html=True)
+'''.format(img_to_html('image/12.png','char0)), unsafe_allow_html=True)
 
 
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
