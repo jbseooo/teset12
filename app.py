@@ -136,5 +136,8 @@ image_path = 'image/12.png'
 # # Display the image using `st.markdown`
 # st.markdown(html_string, unsafe_allow_html=True)
 
-
+with st.sidebar:
+    st.markdown('''<div style="font-weight:bold;">Brand Cookbook</div>''', unsafe_allow_html=True)
+    st.write("dd")
+    st.write("CON")
 
