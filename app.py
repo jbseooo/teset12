@@ -68,6 +68,31 @@ html_code = '''
 st.markdown(html_code.format(img_to_html('image/12.png', 'char0')), unsafe_allow_html=True)
 st.markdown(javascript_code, unsafe_allow_html=True)
 
+# CSS 코드
+css_code = """
+.highlight {
+    filter: brightness(1.2); /* 밝기 조절 */
+    transition: filter 0.3s; /* 변화를 부드럽게 만들기 위한 트랜지션 */
+}
+/* 마우스를 텍스트에 올렸을 때 형광펜 효과를 적용 */
+.highlight:hover {
+    filter: brightness(1.5); /* 조금 더 밝게 만듦 */
+}
+"""
+
+# Streamlit에서 CSS 코드 적용
+st.markdown(f'<style>{css_code}</style>', unsafe_allow_html=True)
+
+# HTML 코드
+html_code = """
+<div>
+    <span class="highlight">희망적인 메시지</span>
+</div>
+"""
+
+# Streamlit에서 HTML 코드 표시
+st.markdown(html_code, unsafe_allow_html=True)
+
 
 st.markdown("""
 <div>
