@@ -1,0 +1,26 @@
+.section_title {
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px auto 8px auto;
+}
+
+.section_content {
+    line-height: 30px;
+    word-break: keep-all;
+}
+
+.expander_content {
+    font-size: 13px;
+    margin-bottom: 10px;
+}
+
+.image_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#char0 {
+    margin: 30px auto 10px auto;
+    max-width: 80%;
+}
