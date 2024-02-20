@@ -13,10 +13,9 @@ def img_to_html(img_path,img_id):
     )
     return img_html
 
+
 def img_to_html2(img_path, img_id):
-    html = f"""
-    <img id="{img_id}" src="{img_path}" width="150" height="100" onclick="fnImgPop(this.src)">
-    """
+    html = f"<img id='{img_id}' src='{img_path}' width='150' height='100' onclick='fnImgPop(this.src)'>"
     return html
 
 html_code = """
@@ -37,44 +36,10 @@ html_code = """
  }
 //-->
 </script>
-""".format(img_to_html2('image/12.png', 'char0'))
+"""
 
-st.markdown(html_code, unsafe_allow_html=True)
+st.markdown(html_code.format(img_to_html2('image/12.png', 'char0')), unsafe_allow_html=True)
 
-with open('./styles/0_style.css') as f:
-    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
-
-
-st.markdown('''
-    <div class='image_container'>
-        {}
-    </div>
-'''.format(img_to_html('image/12.png','char0')), unsafe_allow_html=True)
-
-####
-html_code = """
-<body>
-<{} width="150" height="100" onclick="fnImgPop(this.src)">
-</body>
-<script type="text/javascript">
-<!--
- function fnImgPop(url){
-  var img=new Image();
-  img.src=url;
-  var img_width=img.width;
-  var win_width=img.width+25;
-  var img_height=img.height;
-  var win=img.height+30;
-  var OpenWindow=window.open('','_blank', 'width='+img_width+', height='+img_height+', menubars=no, scrollbars=auto');
-  OpenWindow.document.write("<style>body{margin:0px;}</style><img src='"+url+"' width='"+win_width+"'>");
- }
-//-->
-</script>
-""".format(img_to_html('image/12.png','char0'))
-
-st.markdown(html_code, unsafe_allow_html=True)
-
-###
 
 
 st.markdown("""
