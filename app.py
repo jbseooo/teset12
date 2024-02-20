@@ -35,7 +35,7 @@ with open('./styles/0_style.css') as f:
 
 st.markdown('''
     <div class='image_container'>
-        <img id='char0' {}>
+        <img id='char0'> {}
     </div>
 '''.format(img_to_html('image/12.png')), unsafe_allow_html=True)
 
