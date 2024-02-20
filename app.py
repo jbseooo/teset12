@@ -27,7 +27,46 @@ st.markdown('''
         {}
     </div>
 '''.format(img_to_html('image/12.png','char0')), unsafe_allow_html=True)
+# JavaScript 코드
+javascript_code = """
+<script>
+    // Function to open the popup and display the clicked image
+    function openPopup(imgSrc) {
+        document.getElementById('popup-img').src = imgSrc;
+        document.getElementById('popup').style.display = 'block';
+    }
 
+    // Function to close the popup
+    function closePopup() {
+        document.getElementById('popup').style.display = 'none';
+    }
+
+    // Attach click event listener to all images with class 'img-clickable'
+    var clickableImages = document.querySelectorAll('.img-clickable');
+    clickableImages.forEach(function (img) {
+        img.addEventListener('click', function () {
+            openPopup(this.src);
+        });
+    });
+</script>
+"""
+
+# HTML 코드
+html_code = '''
+<div class='image_container'>
+    {}
+</div>
+
+<!-- The Modal -->
+<div id="popup" class="modal" style="display:none;">
+    <span class="close-btn" onclick="closePopup()">&times;</span>
+    <img class="modal-content" id="popup-img" style="max-width:100%;">
+</div>
+'''
+
+# Streamlit에서 이미지를 표시하고 HTML 및 JavaScript 코드를 표시
+st.markdown(html_code.format(img_to_html('image/12.png', 'char0')), unsafe_allow_html=True)
+st.markdown(javascript_code, unsafe_allow_html=True)
 
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
