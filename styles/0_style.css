@@ -25,11 +25,8 @@
     max-width: 80%;
 }
 
-.highlight {
-    filter: brightness(1.2); /* 밝기 조절 */
-    transition: filter 0.3s; /* 변화를 부드럽게 만들기 위한 트랜지션 */
-}
-/* 마우스를 이미지에 올렸을 때 형광펜 효과를 적용 */
-.highlight:hover {
-    filter: brightness(1.5); /* 조금 더 밝게 만듦 */
+.highlight{
+  display: inline;
+  box-shadow: inset 0 -10px 0 #D9FCDB; 
+  /*-10px은 highlight의 두께*/
 }
