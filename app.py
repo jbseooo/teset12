@@ -68,6 +68,12 @@ html_code = '''
 st.markdown(html_code.format(img_to_html('image/12.png', 'char0')), unsafe_allow_html=True)
 st.markdown(javascript_code, unsafe_allow_html=True)
 
+
+st.mardown("""
+<div>
+<span class="highlight">희망적인 메시지</span>
+</div>
+""",unsafe_allow_html=Ture)
 st.markdown('''<style>.css-1egvi7u {margin-top: -4rem;}</style>''',
     unsafe_allow_html=True)
 # Design change hyperlink href link color
