@@ -72,7 +72,7 @@ st.markdown(javascript_code, unsafe_allow_html=True)
 
 st.markdown("""
 <div>
-<span class="highlight">희망적인 메시지</span>
+<span class="highlight">브랜드의 가치</span>
 </div>
 """,unsafe_allow_html=True)
 
