@@ -17,7 +17,8 @@ def img_to_html(img_path,img_id):
 def img_to_html2(img_path, img_id):
     html = f"<img id='{img_id}' src='{img_path}' width='150' height='100' onclick='fnImgPop(this.src)'>"
     return html
-
+with open('./styles/0_style.css') as f:
+    st.markdown(f'<style>{f.read()}</style>', unsafe_allow_html=True)
 # html_code = """
 # <body>
 # {}
