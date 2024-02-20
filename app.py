@@ -128,21 +128,14 @@ st.success(
     icon="🗺",
 )
 
-# Design hide top header line
-hide_decoration_bar_style = '''<style>header {visibility: hidden;}</style>'''
-st.markdown(hide_decoration_bar_style, unsafe_allow_html=True)
-# Design hide "made with streamlit" footer menu area
-hide_streamlit_footer = """<style>#MainMenu {visibility: hidden;}
-                        footer {visibility: hidden;}</style>"""
-st.markdown(hide_streamlit_footer, unsafe_allow_html=True)
 
-image_path = 'image/12.png'
+image_path = img_to_html('image/12.png','chaar')
 
 # Define the HTML hyperlink with the image
-# html_string = f'<a href="{image_path}" target="_blank"><img src="{image_path}" width="200" caption="legend"></a>'
+html_string = f'<a href="{image_path}" target="_blank"><img src="{image_path}" width="200" caption="legend"></a>'
 
 # # Display the image using `st.markdown`
-# st.markdown(html_string, unsafe_allow_html=True)
+st.markdown(html_string, unsafe_allow_html=True)
 
 with st.sidebar:
     st.markdown('''<div style="font-weight:bold;">Brand Cookbook</div>''', unsafe_allow_html=True)
