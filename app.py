@@ -45,7 +45,7 @@ st.markdown('''
             <div class='image_container'>
             {}
             </div>
-            '''.format(img_to_html('image/12.png','char0')), unsafe_allow_html=True)
+            '''.format(img_to_html('assets/12.png','char0')), unsafe_allow_html=True)
 
 st.markdown("""
 <div>
