@@ -1,6 +1,5 @@
 import streamlit as st
 
-already_scrolled = False  # 이미 스크롤되었는지를 추적하는 변수
 
 def scroll(js_path:str='main', 
            behavior:str='smooth', 
@@ -22,7 +21,6 @@ def scroll(js_path:str='main',
             '''
         
         st.components.v1.html(js)
-        already_scrolled = True  # 이미 스크롤되었음을 표시
 
 st.title("Streamlit Scroll Test")
 
@@ -42,7 +40,7 @@ if st.sidebar.button('scroll to bottom of 1st container'):
     scroll(js_path=js_path)
     
 if st.sidebar.button('scroll to bottom of 2nd container'):
-    js_path = 'document.querySelector(document.querySelector(document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi5 > div.block-container.st-emotion-cache-1y4p8pa.ea3mdgi4 > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(12) > div > div > p"))'
+    js_path = 'document.querySelector(document.querySelector(document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi5 > div.block-container.st-emotion-cache-1y4p8pa.ea3mdgi4 > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(12) > div > div > p")'
     scroll(js_path=js_path)
     
     
