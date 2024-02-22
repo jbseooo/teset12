@@ -38,7 +38,7 @@ with st.container():
         st.write(f"2nd Area : {j}")
     
 if st.sidebar.button('scroll to bottom of 1st container'):
-    js_path = 'document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi5 > div.block-container.st-emotion-cache-1y4p8pa.ea3mdgi4 > div:nth-child(1) > div > div:nth-child(3) > div > div:nth-child(1) > div > div > div > div > h2 > div > span")'
+    js_path = 'document.querySelector("#root > div:nth-child(1) > div.withScreencast > div > div > div > section.main.st-emotion-cache-uf99v8.ea3mdgi5 > div.block-container.st-emotion-cache-1y4p8pa.ea3mdgi4 > div:nth-child(1) > div > div:nth-child(2) > div > div:nth-child(10) > div > div > p")'
     scroll(js_path=js_path)
     
 if st.sidebar.button('scroll to bottom of 2nd container'):
